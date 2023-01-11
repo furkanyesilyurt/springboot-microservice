@@ -39,3 +39,8 @@ Orchestration - k8s, azure, aws elastic container
 Service Discovery - Netflix Eureka, Zookeeper, Consul (İstek trafiğini servislere dağıtır)
 Async Communication - Kafka, rabbitmq, aws sqs, google cloud pub/sub
 Hata ayıklama - hystrix, polly 
+
+Resttemplate service discovery sorumluluğunu yerine getirir. Günümüzde bu işi eureka yapar.
+Feign Client nedir?
+
+**Lombok kullanma. Autowired kullanma.

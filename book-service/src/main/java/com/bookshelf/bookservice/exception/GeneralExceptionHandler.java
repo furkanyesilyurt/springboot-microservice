@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GeneralExceptionHandler {
 
-    @ExceptionHandler(BookCouldNotCreateException.class)
+    @ExceptionHandler(BookNotFoundException.class)
     public ResponseEntity<?> handle(BookNotFoundException bookNotFoundException) {
         return new ResponseEntity<>(bookNotFoundException.getMessage(), HttpStatus.NOT_FOUND);
     }

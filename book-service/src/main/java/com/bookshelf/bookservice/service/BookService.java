@@ -40,9 +40,8 @@ public class BookService {
                 .orElseThrow(() -> new BookNotFoundException("Book could not found by id: {}" + id));
     }
 
-    public BookDto saveBook(BookDto bookDto) {
-        return bookRepository.save(bookConverter.convertBookDtoToBook(bookDto))
-                .map(bookConverter::convertBookToBookDto)
-                .orElseThrow(() -> new BookCouldNotCreateException("Book could not save: {}" + bookDto));
+    public BookIdDto saveBook(BookDto bookDto) {
+        var book = bookRepository.save(bookConverter.convertBookDtoToBook(bookDto));
+        return bookConverter.convertBookToBookIdDto(book);
     }
 }

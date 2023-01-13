@@ -22,7 +22,7 @@ public class Book {
     @Column(name = "ID", nullable = false)
     @SequenceGenerator(name = "generator", sequenceName = "ID_USER_SEQ")
     @GeneratedValue(generator = "generator", strategy = GenerationType.AUTO)
-    private Long id = null;
+    private Long id;
     private String title;
     private Integer bookYear;
     private String author;

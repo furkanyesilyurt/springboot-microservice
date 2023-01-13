@@ -43,4 +43,12 @@ Hata ayıklama - hystrix, polly
 Resttemplate service discovery sorumluluğunu yerine getirir. Günümüzde bu işi eureka yapar.
 Feign Client nedir?
 
-**Lombok kullanma. Autowired kullanma.
+**Lombok kullanma. Autowired kullanma. third party yazılım kullanımı riskli.
+
+Controller'ın görevi; security varsa ilk önce onu kontrol atar, ardından validate atar, ilgili isteği servise aktarır ve servisten gelen cevabı response entity şeklinde client'a yansıtır.
+
+RestControllerAdvice anotasyonu exceptionları rest response içerisinde dönebilmemize yarar.
+Yeni spring versionları sayesinde EnableEurekaClient anotasyonuna ihtiyaç kalmadı.
+controllerda throw exception yapma bunun yerine exceptioncontroller oluştur.
+
+

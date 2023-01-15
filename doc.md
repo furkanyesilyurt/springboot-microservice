@@ -42,6 +42,9 @@ Hata ayıklama - hystrix, polly
 
 Resttemplate service discovery sorumluluğunu yerine getirir. Günümüzde bu işi eureka yapar.
 Feign Client nedir?
+Servislerimiz arasındaki iletişimi klasik yöntem diyebileceğimiz RestTemplate ile yaparak sağlabiliyoruz. RestTemplate ile yapılan iletişim yöntemini kullanarak metotlarımız içerisinde ilgili api isteğini kullanarak metotlarımızı bağımlı hale getiriyoruz.
+OpenFeign kullanarak servis iletişimi interface templateler üzerinden yönetip, daha okunabilir ve configürasyonel olarak kullanabilmeyi sağlamaktayız.
+Bu kullanabilirlik sayesinde çok fazla kullanılan servislerin yönetilebilmesi ve olası değişiklerde daha hızlı ve kolay müdahale edebilmemizi sağlamaktadır.
 
 **Lombok kullanma. Autowired kullanma. third party yazılım kullanımı riskli.
 

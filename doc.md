@@ -54,4 +54,8 @@ RestControllerAdvice anotasyonu exceptionları rest response içerisinde dönebi
 Yeni spring versionları sayesinde EnableEurekaClient anotasyonuna ihtiyaç kalmadı.
 controllerda throw exception yapma bunun yerine exceptioncontroller oluştur.
 
+Exception Handling - 
+Stop Process Inform User / Create Default Value&Change the request ---> exception durumlarında iki süreçten bir tanesini seçmen gerekiyor.
+iki süreç bir arada yürümez.
+
 

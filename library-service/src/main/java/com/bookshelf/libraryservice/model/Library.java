@@ -24,7 +24,7 @@ public class Library {
     @Id
     @Column(name = "ID", nullable = false)
     @SequenceGenerator(name = "generator", sequenceName = "ID_USER_SEQ")
-    @GeneratedValue(generator = "generator", strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "generator", strategy = GenerationType.UUID)
     private Long id;
 
     @ElementCollection

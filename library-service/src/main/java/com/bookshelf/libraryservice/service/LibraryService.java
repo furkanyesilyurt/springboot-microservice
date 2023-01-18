@@ -2,7 +2,6 @@ package com.bookshelf.libraryservice.service;
 
 import com.bookshelf.libraryservice.client.BookServiceClient;
 import com.bookshelf.libraryservice.dto.AddBookRequest;
-import com.bookshelf.libraryservice.dto.BookIdDto;
 import com.bookshelf.libraryservice.dto.LibraryDto;
 import com.bookshelf.libraryservice.exception.LibraryNotFoundException;
 import com.bookshelf.libraryservice.model.Library;

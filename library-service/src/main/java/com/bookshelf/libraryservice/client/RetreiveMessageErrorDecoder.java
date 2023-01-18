@@ -11,13 +11,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
-public class RetrieveMessageErrorDecoder implements ErrorDecoder {
+public class RetreiveMessageErrorDecoder implements ErrorDecoder {
 
     private final ErrorDecoder errorDecoder = new Default();
 
     @Override
     public Exception decode(String methodKey, Response response) {
-        ExceptionMessage exceptionMessage = null;
+        ExceptionMessage exceptionMessage;
         try (InputStream body = response.body().asInputStream()) {
             exceptionMessage = new ExceptionMessage((String) response.headers().get("date").toArray()[0],
                     response.status(),

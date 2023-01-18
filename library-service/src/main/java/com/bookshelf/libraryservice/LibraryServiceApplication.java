@@ -1,7 +1,6 @@
 package com.bookshelf.libraryservice;
 
-import com.bookshelf.libraryservice.client.RetrieveMessageErrorDecoder;
-import com.bookshelf.libraryservice.exception.ExceptionMessage;
+import com.bookshelf.libraryservice.client.RetreiveMessageErrorDecoder;
 import feign.Logger;
 import feign.codec.ErrorDecoder;
 import org.springframework.boot.SpringApplication;
@@ -19,12 +18,17 @@ public class LibraryServiceApplication {
 
 	@Bean
 	public ErrorDecoder ErrorDecoder() {
-		return new RetrieveMessageErrorDecoder();
+		return new RetreiveMessageErrorDecoder();
+	}
+
+	//Feign Client Error Handling
+	@Bean
+	public ErrorDecoder errorDecoder() {
+		return new RetreiveMessageErrorDecoder();
 	}
 
 	@Bean
 	Logger.Level feignLoggerLevel() {
 		return Logger.Level.FULL;
 	}
-
 }

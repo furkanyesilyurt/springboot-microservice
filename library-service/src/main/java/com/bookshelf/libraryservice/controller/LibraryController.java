@@ -3,6 +3,9 @@ package com.bookshelf.libraryservice.controller;
 import com.bookshelf.libraryservice.dto.AddBookRequest;
 import com.bookshelf.libraryservice.dto.LibraryDto;
 import com.bookshelf.libraryservice.service.LibraryService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,10 +16,14 @@ import java.util.List;
 @RequestMapping("/api/v1/library")
 public class LibraryController {
 
-    private final LibraryService libraryService;
+    Logger logger = LoggerFactory.getLogger(LibraryController.class);
 
-    public LibraryController(LibraryService libraryService) {
+    private final LibraryService libraryService;
+    private final Environment environment;
+
+    public LibraryController(LibraryService libraryService, Environment environment) {
         this.libraryService = libraryService;
+        this.environment = environment;
     }
 
     @GetMapping
@@ -26,6 +33,7 @@ public class LibraryController {
 
     @PostMapping
     public ResponseEntity<LibraryDto> createLibrary() {
+        logger.info("Library created on port number:" + environment.getProperty("local.server.port"));
         return new ResponseEntity<>(libraryService.createLibrary(), HttpStatus.CREATED);
     }
 

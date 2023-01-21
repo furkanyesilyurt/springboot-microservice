@@ -28,6 +28,7 @@ public class LibraryController {
 
     @GetMapping
     public ResponseEntity<List<Long>> getAllLibraries() {
+        logger.info("log");
         return new ResponseEntity<>(libraryService.getAllLibraries(), HttpStatus.OK);
     }
 

@@ -5,6 +5,7 @@ import com.bookshelf.libraryservice.dto.LibraryDto;
 import com.bookshelf.libraryservice.service.LibraryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,9 @@ public class LibraryController {
 
     private final LibraryService libraryService;
     private final Environment environment;
+
+    @Value("${library.service.count}")
+    private Integer count;
 
     public LibraryController(LibraryService libraryService, Environment environment) {
         this.libraryService = libraryService;
@@ -47,5 +51,10 @@ public class LibraryController {
     public ResponseEntity<Void> addBookToLibarary(@RequestBody AddBookRequest addBookRequest) {
         libraryService.addBookToLibrary(addBookRequest);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/count")
+    public ResponseEntity<String> getCount() {
+        return ResponseEntity.ok("Library count is " + count);
     }
 }

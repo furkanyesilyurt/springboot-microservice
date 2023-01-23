@@ -58,4 +58,8 @@ Exception Handling -
 Stop Process Inform User / Create Default Value&Change the request ---> exception durumlarında iki süreçten bir tanesini seçmen gerekiyor.
 iki süreç bir arada yürümez.
 
+Spring Boot Actuator, uygulamaların production ortamına hazır özellikleri (health check, disk usage, heap dump vs.) otomatik aktifleştirir ve farklı HTTP endpoint’ ler ile etkileşimde bulunmayı sağlayan bir yapı sunar.
+
+API GATEWAY - istemcilerle backend sunucuları / mikro servisler arasında duran bir API yönetim aracıdır. çeşitli kurallara göre uygun servislere yönlendiren bir ters vekil sunucusu (reverse proxy) olarak çalışır.istek sınırlandırma, istatistik, kimlik doğrulama, monitoring vs. V1 API’sini başka backend sunucuya, V2 API’sini başka bir backend sunucuya yönlendirebilirsiniz. Yanıtları belirli kurallara göre önbelleklemeniz gerekebilir. Cachelemeyi ayrı bir katmanda çalıştırarak sonuçları backend sunucuya hiç istek yapmadan doğrudan cache’den sunabilirsiniz.
+
 

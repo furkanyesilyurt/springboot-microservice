@@ -22,8 +22,11 @@ public class LibraryController {
     private final LibraryService libraryService;
     private final Environment environment;
 
-    @Value("${library.service.count}")
+//    @Value("${library.service.count}")
     private Integer count;
+
+    @Value("${library-service.book.count}")
+    private Integer vaultCount;
 
     public LibraryController(LibraryService libraryService, Environment environment) {
         this.libraryService = libraryService;
@@ -56,5 +59,10 @@ public class LibraryController {
     @GetMapping("/count")
     public ResponseEntity<String> getCount() {
         return ResponseEntity.ok("Library count is " + count);
+    }
+
+    @GetMapping("/vault")
+    public ResponseEntity<String> getVaultCount(){
+        return ResponseEntity.ok("Library vault count is " + vaultCount);
     }
 }

@@ -62,4 +62,10 @@ Spring Boot Actuator, uygulamaların production ortamına hazır özellikleri (h
 
 API GATEWAY - istemcilerle backend sunucuları / mikro servisler arasında duran bir API yönetim aracıdır. çeşitli kurallara göre uygun servislere yönlendiren bir ters vekil sunucusu (reverse proxy) olarak çalışır.istek sınırlandırma, istatistik, kimlik doğrulama, monitoring vs. V1 API’sini başka backend sunucuya, V2 API’sini başka bir backend sunucuya yönlendirebilirsiniz. Yanıtları belirli kurallara göre önbelleklemeniz gerekebilir. Cachelemeyi ayrı bir katmanda çalıştırarak sonuçları backend sunucuya hiç istek yapmadan doğrudan cache’den sunabilirsiniz.
 
-
+Vault, uygulama sırlarını yönetmek ve UI, CLI veya HTTP API kullanarak hassas bilgileri korumak için kullanılır - örneğin: tokenler, şifreler, sertifikalar, şifreleme anahtarları vs. Vault tüm sırları saklamak için merkezi bir yerdir. (http://www.inanzzz.com/index.php/yazi/1v7j/hashicorp-vault-ile-uygulama-sirlarini-yonetme#:~:text=Vault%2C%20uygulama%20s%C4%B1rlar%C4%B1n%C4%B1%20y%C3%B6netmek%20ve,saklamak%20i%C3%A7in%20merkezi%20bir%20yerdir.)
+├── docker-compose.yml
+└── vault
+    └── config
+        └── config.json
+        
+spring cloud config avantajı; tüm configleri ortak bir noktadan yönetebilir ve değiştirebiliriz. programı yenide ayağa kaldırmadan actuator refresh ile file içerisinde yapılan değişkliği programa yedirebiliriz.

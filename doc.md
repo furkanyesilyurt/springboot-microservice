@@ -69,3 +69,5 @@ Vault, uygulama sırlarını yönetmek ve UI, CLI veya HTTP API kullanarak hassa
         └── config.json
         
 spring cloud config avantajı; tüm configleri ortak bir noktadan yönetebilir ve değiştirebiliriz. programı yenide ayağa kaldırmadan actuator refresh ile file içerisinde yapılan değişkliği programa yedirebiliriz.
+
+gRPC , Google Remote Procedure Call anlamına gelir. gRPC, ölçeklenebilir ve hızlı API'ler oluşturmak için kullanılan açık kaynaklı bir RPC çerçevesidir. Ağ bağlantılı sistemlerin geliştirilmesine ve gRPC istemcisi ile sunucu uygulamaları arasında açık iletişime olanak tanır. gRPC, Google, IBM, Netflix ve daha fazlası dahil olmak üzere birçok önde gelen teknoloji şirketi tarafından benimsenmiştir. gRPC çerçevesi, optimum API koruması, yüksek performanslı uzaktan prosedür çağrıları ve ölçeklenebilirlik için HTTP/2, protokol arabellekleri ve daha fazlası gibi en son teknoloji yığınlarına bağlıdır.
